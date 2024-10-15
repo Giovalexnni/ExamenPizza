@@ -77,17 +77,36 @@
         <option value="10000" >Vegetales</option>
         <option value="7000" >Piña</option>
     </select>
+    <br><br>
+
+        <label for="">Cantidad</label><br>
+    <select name="" id="cantidad">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    
+    </select>
         <br><br><br>
         <button type="button" onclick="totalPedido()">Total Pedido</button>
         <p id="resultado"></p>
+
     </form>
 </div>
     <script>
         function totalPedido() {
             let pizza = document.getElementById("pizza").value;
             let adicion = document.getElementById("adicion").value;
-            let total = parseInt(pizza) + parseInt(adicion);
-
+            let cantidad = document.getElementById("cantidad").value;
+            let total = parseInt(pizza) + parseInt(adicion) * parseInt(cantidad);
+                 
+           
             document.getElementById("resultado").innerText = "Total a pagar: $" + total.toLocaleString();
         }
     </script>
