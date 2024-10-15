@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {    
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('/img/pizza.png');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            text-align: center;
+            padding: 50px;
+            color: #f3ea9c;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(133, 185, 135, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        button {
+            background-color: #66e193;
+            color: rgb(35, 43, 5);
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        h2  {
+            font-size: 36px;
+        }
+
+        p, label, input{
+        font-size: 20px; 
+        }
+        select {
+            border-radius: 12px;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(19, 115, 43);
+            font-weight: bold;
+            font-size: 18px;
+        }
+  </style>
+
+</head>
+<body>
+<div class="container">
+
+    <h2> Bienvenidos a la mejor pizzeria </h2>
+
+    <p>En nuestra pizzeria, somos los mejores en la comida Italiana.</p>
+ 
+<form action="">
+        <label for="">Escoje la pizza</label><br>
+    <select  name="" id="pizza">
+        <option value="14000">Queso</option>
+        <option value="16000">Jamon y Queso</option>
+        <option value="20000">Especial</option>
+    </select>
+        <br><br>
+        <label for="">Selecciona una adicion</label><br>
+    <select name="" id="adicion">                           
+        <option value="2000">Maiz </option>
+        <option value="10000" >Queso</option>
+        <option value="12000">Pepperoni</option>
+        <option value="10000" >Vegetales</option>
+        <option value="7000" >Piña</option>
+    </select>
+        <br><br><br>
+        <button type="button" onclick="totalPedido()">Total Pedido</button>
+        <p id="resultado"></p>
+    </form>
+</div>
+    <script>
+        function totalPedido() {
+            let pizza = document.getElementById("pizza").value;
+            let adicion = document.getElementById("adicion").value;
+            let total = parseInt(pizza) + parseInt(adicion);
+
+            document.getElementById("resultado").innerText = "Total a pagar: $" + total.toLocaleString();
+        }
+    </script>
+
+</body>
+</html>
